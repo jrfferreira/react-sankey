@@ -26,7 +26,7 @@ function reconcileNodeChildren(node, chartConfig, rootID, links, nodes, sourceId
 
   return {
     ...node,
-    children: orderBy(children, ['value'], ['desc']),
+    children: chartConfig.keepOrder ? children : orderBy(children, ['value'], ['desc']),
   };
 }
 
